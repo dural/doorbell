@@ -1,4 +1,7 @@
 ## About 
+I've created a fork from voxmatt so I can implement another function to control the bell separate from the push button on the door. I will create a new accessory for the bell so I can schedule it using the home app.
+Also I will make a simple install manual using homebridge UI. For the original project visit Voxmatt.
+
 A Homebridge plugin for a Raspberry Pi with an Automation Hat that is controlling an old, buzzer-activated door gate. Directly inspired by [this article](https://medium.com/dirigible/siri-controlled-1970s-intercom-door-ecd7a6b0df31) Please note that this plugin represents only the software component. The hardware is a different manner entirely, but is explained in the above mentioned article. Maybe I'll get around to detailing it someday...
 
 ## Administration on the Raspberry Pi
