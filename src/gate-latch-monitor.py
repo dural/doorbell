@@ -38,10 +38,10 @@ def try_command(command_queue):
 
 def run_command(command):
   if command == "latch_unlock":
-    automationhat.relay.one.on()
+    automationhat.relay.two.on()
     print("latch_is_unlocked")
   elif command == "latch_lock":
-    automationhat.relay.one.off()
+    automationhat.relay.two.off()
     print("latch_is_locked")
   elif isinstance(command, str):
     print(command)
@@ -52,6 +52,9 @@ def read_doorbell(thread_local):
   if doorbell_on_state != thread_local.doorbell_on_state:
     thread_local.doorbell_on_state = doorbell_on_state
     print("doorbell_is_on") if doorbell_on_state else print("doorbell_is_off")
+    automationhat.relay.one.on()
+    time.sleep(3)
+    automationhat.relay.one.off()
 
 if __name__ == "__main__":
   main()
