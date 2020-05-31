@@ -25,8 +25,9 @@ def run_loop(command_queue):
   thread_local.doorbell_on_state = False
 
   while True:
-    try_command(command_queue)
     read_doorbell(thread_local)
+    try_command(command_queue)
+    wait_doorbell()
 
 def try_command(command_queue):
   try:
@@ -55,6 +56,11 @@ def read_doorbell(thread_local):
     automationhat.relay.one.on()
     time.sleep(3)
     automationhat.relay.one.off()
+
+def wait_doorbell():
+  if doorbellring == true
+    time.sleep(10)
+    doorbellring = false
 
 if __name__ == "__main__":
   main()
