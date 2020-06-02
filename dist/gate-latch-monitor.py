@@ -52,9 +52,10 @@ def read_doorbell(thread_local):
   if doorbell_on_state != thread_local.doorbell_on_state:
     thread_local.doorbell_on_state = doorbell_on_state
     print("doorbell_is_on") if doorbell_on_state else print("doorbell_is_off")
-    automationhat.relay.one.on()
-    time.sleep(3)
-    automationhat.relay.one.off()
+    if automationhat.input.one.read() == 1:
+      automationhat.relay.one.on()
+      time.sleep(1)
+      automationhat.relay.one.off()
 
 if __name__ == "__main__":
   main()
