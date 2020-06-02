@@ -1,10 +1,11 @@
 var PythonShell = require('python-shell');
 var Service, Characteristic;
 
-module.exports = function (homebridge) {
-  Service = homebridge.hap.Service;
-  Characteristic = homebridge.hap.Characteristic;
-  homebridge.registerAccessory("homebridge-doorbell-latch", "Doorbell", LockitronAccessory);
+module.exports = function(homebridge) {
+    Service = homebridge.hap.Service;
+    Characteristic = homebridge.hap.Characteristic;
+
+    homebridge.registerAccessory("homebridge-doorbell", "Doorbell", LockitronAccessory);
 }
 
 function LockitronAccessory(log, config) {
